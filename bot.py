@@ -1,3 +1,4 @@
+import setup 
 import hashlib
 import os 
 import time
@@ -97,4 +98,4 @@ async def on_message(message):
           return
       await bot.process_commands(message)
             
-bot.run("Token here plz") # Making easy setup.py soon :)
+bot.run(f"{token}")
