@@ -24,7 +24,7 @@ async def on_ready():
 @bot.event
 async def on_message(message):
   if message.content.lower().startswith("Morty "):
-    await bot.say(f"But {ctx.message.author.mention}!!! I have so much to live for!")
+    await bot.say(f"Goodbye, {ctx.message.author.mention}.")
 
 @bot.event
 async def on_message(message):
@@ -61,11 +61,12 @@ async def RPS(ctx, x):
           await bot.say("You win")
         else:
           await bot.say("You lost!")
-          await bot.say(f"I chose {computer_choice} and you chose {choice}... LOL")
+          await bot.say(f"I chose {computer_choice} and you chose {choice}...")
 
 @bot.command(pass_context=True)
 async def check(ctx, _):
-    return await bot.say(random.choice((
+      '''An 8ball system! Pretty boring ;c'''
+      return await bot.say(random.choice((
         "Maybe",
         "I say no",
         "Yes",
@@ -74,6 +75,7 @@ async def check(ctx, _):
 
 @bot.command(pass_context = True)
 async def Binary(ctx, byte):
+            '''Random 8 bit binary'''
             while len(byte) == 8:
               decimal = 0
               for num in byte:
@@ -85,6 +87,7 @@ async def Binary(ctx, byte):
 
 @bot.command(pass_context = True)
 async def Dm(ctx, member : discord.Member = None, *, message):
+      '''very dangerous'''
     if ctx.message.author.id == '289151838618648576':
         await bot.send_message(member, message)
     await bot.process_commands(message)
@@ -98,4 +101,4 @@ async def on_message(message):
           return
       await bot.process_commands(message)
             
-bot.run(f"{token}")
+bot.run(f"{token}") #This is very, very bad 
